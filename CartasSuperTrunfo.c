@@ -22,9 +22,11 @@ int main() {
     int city_code_01 = 0;
     char city_name_01[20];
     int population_01 = 0;
-    float area_01 = 0;
-    float pib_01 = 0;
+    float area_01 = 0.0;
+    float pib_01 = 0.0;
     int number_of_tourist_attractions_01 = 0;
+    float population_density_01 = 0.0;
+    float gdp_per_percapit_01 = 0.0;
 
     // Dados da segunda cidade
     int city_code_02 = 0;
@@ -33,6 +35,8 @@ int main() {
     float area_02 = 0;
     float pib_02 = 0;
     int number_of_tourist_attractions_02 = 0;
+    float population_density_02 = 0.0;
+    float gdp_per_percapit_02 = 0.0;
 
     // Leitura dos dados da primeira cidade
     printf("---------------------------------------\n");
@@ -68,6 +72,15 @@ int main() {
     scanf("%i", &number_of_tourist_attractions_02);
 
 
+    // Calculando valores de Densidade Populacional e PIB per Capita da primeira cidade
+    population_density_01 = (float) population_01 / area_01;
+    gdp_per_percapit_01 = pib_01 / (float) population_01;
+
+    // Calculando valores de Densidade Populacional e PIB per Capita da segunda cidade
+    population_density_02 = (float) population_02 / area_02;
+    gdp_per_percapit_02 = pib_02 / (float) population_02;
+
+
     // Exibindo informaçãoes da primeira cidade
     printf("---------------------------------------\n");
     printf("Exibindo dados da cidade código [%i]\n", city_code_01);
@@ -76,7 +89,10 @@ int main() {
     printf("\tArea: %.2f\n", area_01);
     printf("\tPIB: %.2f\n", pib_01);
     printf("\tNúmero de pontos turisticos: %i\n", number_of_tourist_attractions_01);
+    printf("\tDensidade Populacional: %.2f\n", population_density_01);
+    printf("\tPIB per Capita: %.2f\n", gdp_per_percapit_01);
 
+    
     // Exibindo informaçãoes da segunda cidade
     printf("-------------\n");
     printf("Exibindo dados da cidade código [%i]\n", city_code_02);
@@ -85,6 +101,8 @@ int main() {
     printf("\tArea: %.2f\n", area_02);
     printf("\tPIB: %.2f\n", pib_02);
     printf("\tNúmero de pontos turisticos: %i\n", number_of_tourist_attractions_02);
+    printf("\tDensidade Populacional: %.2f\n", population_density_02);
+    printf("\tPIB per Capita: %.2f\n", gdp_per_percapit_02);
 
 
     return 0;
