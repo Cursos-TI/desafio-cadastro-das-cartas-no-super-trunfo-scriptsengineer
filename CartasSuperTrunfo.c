@@ -21,7 +21,7 @@ int main() {
     // Dados da primeira cidade
     int city_code_01 = 0;
     char city_name_01[20];
-    int population_01 = 0;
+    unsigned long int population_01 = 0;
     float area_01 = 0.0;
     float pib_01 = 0.0;
     int number_of_tourist_attractions_01 = 0;
@@ -31,7 +31,7 @@ int main() {
     // Dados da segunda cidade
     int city_code_02 = 0;
     char city_name_02[20];
-    int population_02 = 0;
+    unsigned long int population_02 = 0;
     float area_02 = 0;
     float pib_02 = 0;
     int number_of_tourist_attractions_02 = 0;
@@ -46,7 +46,7 @@ int main() {
     printf("Digite o nome da cidade:");
     scanf("%s", city_name_01);
     printf("Digite a população da cidade:");
-    scanf("%i", &population_01);
+    scanf("%lu", &population_01);
     printf("Digite a area da cidade:");
     scanf("%f", &area_01);
     printf("Digite o pib da cidade:");
@@ -63,7 +63,7 @@ int main() {
     printf("Digite o nome da cidade:");
     scanf("%s", city_name_02);
     printf("Digite a população da cidade:");
-    scanf("%i", &population_02);
+    scanf("%lu", &population_02);
     printf("Digite a area da cidade:");
     scanf("%f", &area_02);
     printf("Digite o pib da cidade:");
@@ -85,7 +85,7 @@ int main() {
     printf("---------------------------------------\n");
     printf("Exibindo dados da cidade código [%i]\n", city_code_01);
     printf("\tNome: %s\n", city_name_01);
-    printf("\tPopulação: %i\n", population_01);
+    printf("\tPopulação: %lu\n", population_01);
     printf("\tArea: %.2f\n", area_01);
     printf("\tPIB: %.2f\n", pib_01);
     printf("\tNúmero de pontos turisticos: %i\n", number_of_tourist_attractions_01);
@@ -97,12 +97,39 @@ int main() {
     printf("-------------\n");
     printf("Exibindo dados da cidade código [%i]\n", city_code_02);
     printf("\tNome: %s\n", city_name_02);
-    printf("\tPopulação: %i\n", population_02);
+    printf("\tPopulação: %lu\n", population_02);
     printf("\tArea: %.2f\n", area_02);
     printf("\tPIB: %.2f\n", pib_02);
     printf("\tNúmero de pontos turisticos: %i\n", number_of_tourist_attractions_02);
     printf("\tDensidade Populacional: %.2f\n", population_density_02);
     printf("\tPIB per Capita: %.2f\n", gdp_per_percapit_02);
+
+
+    printf("-------------\n");
+    printf("Comparação de Cartas:\n");
+
+    printf("\tPopulação:");
+    printf("A Carta venceu: (%i)\n", population_01 > population_02);
+
+    printf("\tArea:");
+    printf("A Carta venceu: (%i)\n", area_01 > area_02);
+
+    printf("\tPIB:");
+    printf("A Carta venceu: (%i)\n", pib_01 > pib_02);
+
+    printf("\tNúmero de pontos turisticos:");
+    printf("A Carta venceu: (%i)\n", number_of_tourist_attractions_01 > number_of_tourist_attractions_02);
+
+    printf("\tDensidade Populacional:");
+    printf("A Carta venceu: (%i)\n", population_density_01 < population_density_02);
+
+    printf("\tPIB per Capita:");
+    printf("A Carta venceu: (%i)\n", gdp_per_percapit_01 > gdp_per_percapit_02);
+
+    double superpower_01 = population_01 + area_01 + pib_01 + number_of_tourist_attractions_01 + (1/population_density_01) + gdp_per_percapit_01;
+    double superpower_02 = population_01 + area_01 + pib_01 + number_of_tourist_attractions_01 + (1/population_density_01) + gdp_per_percapit_01;
+    printf("\tSuperpoder:");
+    printf("A Carta venceu: (%i)\n", superpower_01 > superpower_02);
 
 
     return 0;
