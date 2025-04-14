@@ -19,7 +19,9 @@ int main() {
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
     
     // Dados da primeira cidade
-    int city_code_01 = 0;
+
+    char state_01;
+    char city_code_01[5];
     char city_name_01[20];
     unsigned long int population_01 = 0;
     float area_01 = 0.0;
@@ -29,7 +31,8 @@ int main() {
     float gdp_per_percapit_01 = 0.0;
 
     // Dados da segunda cidade
-    int city_code_02 = 0;
+    char state_02;
+    char city_code_02[5];
     char city_name_02[20];
     unsigned long int population_02 = 0;
     float area_02 = 0;
@@ -41,8 +44,10 @@ int main() {
     // Leitura dos dados da primeira cidade
     printf("---------------------------------------\n");
     printf("= Digite os dados da primeira cidade =\n");
+    printf("Digite o estado da cidade:");
+    scanf(" %c", &state_01);
     printf("Digite o código da cidade:");
-    scanf("%i", &city_code_01);
+    scanf("%s", city_code_01);
     printf("Digite o nome da cidade:");
     scanf("%s", city_name_01);
     printf("Digite a população da cidade:");
@@ -58,8 +63,10 @@ int main() {
     // Leitura dos dados da segunda cidade
     printf("---------------------------------------\n");
     printf("= Digite os dados da segunda cidade =\n");
+    printf("Digite o estado da cidade:");
+    scanf(" %c", &state_02);
     printf("Digite o código da cidade:");
-    scanf("%i", &city_code_02);
+    scanf("%s", city_code_02);
     printf("Digite o nome da cidade:");
     scanf("%s", city_name_02);
     printf("Digite a população da cidade:");
@@ -83,7 +90,8 @@ int main() {
 
     // Exibindo informaçãoes da primeira cidade
     printf("---------------------------------------\n");
-    printf("Exibindo dados da cidade código [%i]\n", city_code_01);
+    printf("Exibindo dados da cidade código [%s]\n", city_code_01);
+    printf("\tEstado: %c\n", state_01);
     printf("\tNome: %s\n", city_name_01);
     printf("\tPopulação: %lu\n", population_01);
     printf("\tArea: %.2f\n", area_01);
@@ -95,7 +103,8 @@ int main() {
     
     // Exibindo informaçãoes da segunda cidade
     printf("-------------\n");
-    printf("Exibindo dados da cidade código [%i]\n", city_code_02);
+    printf("Exibindo dados da cidade código [%s]\n", city_code_02);
+    printf("\tEstado: %c\n", state_02);
     printf("\tNome: %s\n", city_name_02);
     printf("\tPopulação: %lu\n", population_02);
     printf("\tArea: %.2f\n", area_02);
